@@ -14,6 +14,8 @@ import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
 import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
+import SuburbPage from "./pages/SuburbPage";
+import SuburbsIndexPage from "./pages/SuburbsIndexPage";
 
 // Root route with Layout
 const rootRoute = createRootRoute({
@@ -58,12 +60,104 @@ const faqRoute = createRoute({
   component: FAQPage,
 });
 
+// Suburbs routes
+const suburbsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs",
+  component: SuburbsIndexPage,
+});
+
+const suburbSydneyCbdRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/sydney-cbd",
+  component: () => <SuburbPage slug="sydney-cbd" />,
+});
+
+const suburbParramattaRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/parramatta",
+  component: () => <SuburbPage slug="parramatta" />,
+});
+
+const suburbBondiRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/bondi",
+  component: () => <SuburbPage slug="bondi" />,
+});
+
+const suburbNewtownRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/newtown",
+  component: () => <SuburbPage slug="newtown" />,
+});
+
+const suburbChatswoodRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/chatswood",
+  component: () => <SuburbPage slug="chatswood" />,
+});
+
+const suburbLiverpoolRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/liverpool",
+  component: () => <SuburbPage slug="liverpool" />,
+});
+
+const suburbPenrithRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/penrith",
+  component: () => <SuburbPage slug="penrith" />,
+});
+
+const suburbManlyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/manly",
+  component: () => <SuburbPage slug="manly" />,
+});
+
+const suburbHurstvilleRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/hurstville",
+  component: () => <SuburbPage slug="hurstville" />,
+});
+
+const suburbBlacktownRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/blacktown",
+  component: () => <SuburbPage slug="blacktown" />,
+});
+
+const suburbCronullaRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/cronulla",
+  component: () => <SuburbPage slug="cronulla" />,
+});
+
+const suburbStrathfieldRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/suburbs/strathfield",
+  component: () => <SuburbPage slug="strathfield" />,
+});
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   servicesRoute,
   aboutRoute,
   contactRoute,
   faqRoute,
+  suburbsRoute,
+  suburbSydneyCbdRoute,
+  suburbParramattaRoute,
+  suburbBondiRoute,
+  suburbNewtownRoute,
+  suburbChatswoodRoute,
+  suburbLiverpoolRoute,
+  suburbPenrithRoute,
+  suburbManlyRoute,
+  suburbHurstvilleRoute,
+  suburbBlacktownRoute,
+  suburbCronullaRoute,
+  suburbStrathfieldRoute,
 ]);
 
 const hashHistory = createHashHistory();

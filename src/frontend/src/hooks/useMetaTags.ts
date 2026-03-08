@@ -5,6 +5,7 @@ interface MetaTagsOptions {
   description: string;
   ogImage?: string;
   ogType?: string;
+  geoPlacename?: string;
 }
 
 export function useMetaTags({
@@ -12,6 +13,7 @@ export function useMetaTags({
   description,
   ogImage = "/assets/generated/hero-banner.dim_1200x600.jpg",
   ogType = "website",
+  geoPlacename = "Sydney NSW Australia",
 }: MetaTagsOptions) {
   useEffect(() => {
     // Title
@@ -28,6 +30,16 @@ export function useMetaTags({
       el.setAttribute("content", content);
     };
 
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`);
+      if (!el) {
+        el = document.createElement("link");
+        el.setAttribute("rel", rel);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("href", href);
+    };
+
     setMeta("description", description);
 
     // OG tags
@@ -35,6 +47,7 @@ export function useMetaTags({
     setMeta("og:description", description, true);
     setMeta("og:image", ogImage, true);
     setMeta("og:type", ogType, true);
+    setMeta("og:url", window.location.href, true);
     setMeta("og:site_name", "Tru End of Lease Cleaning Sydney", true);
     setMeta("og:locale", "en_AU", true);
 
@@ -46,8 +59,11 @@ export function useMetaTags({
 
     // Geo tags for local SEO
     setMeta("geo.region", "AU-NSW");
-    setMeta("geo.placename", "Sydney");
+    setMeta("geo.placename", geoPlacename);
     setMeta("geo.position", "-33.8688;151.2093");
     setMeta("ICBM", "-33.8688, 151.2093");
-  }, [title, description, ogImage, ogType]);
+
+    // Canonical
+    setLink("canonical", window.location.href);
+  }, [title, description, ogImage, ogType, geoPlacename]);
 }

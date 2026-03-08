@@ -11,6 +11,7 @@ export default function ContactPage() {
     description:
       "Get in touch with Tru End of Lease Cleaning Sydney. Call or WhatsApp us on 0488 841 883. Fill out our quote form and we'll get back to you fast.",
     ogImage: "/assets/generated/contact-us.dim_800x400.jpg",
+    geoPlacename: "Sydney NSW Australia",
   });
 
   return (

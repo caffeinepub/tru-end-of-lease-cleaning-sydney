@@ -10,6 +10,8 @@ export default function FAQPage() {
     title: "Bond Cleaning FAQ Sydney | Tru End of Lease Cleaning",
     description:
       "Got questions about bond cleaning in Sydney? Find answers to the most common end of lease cleaning FAQs – costs, products, guarantees, and more.",
+    ogImage: "/assets/generated/about-team.dim_800x500.jpg",
+    geoPlacename: "Sydney NSW Australia",
   });
 
   return (

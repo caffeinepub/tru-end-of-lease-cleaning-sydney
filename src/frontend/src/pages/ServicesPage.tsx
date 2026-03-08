@@ -282,6 +282,7 @@ export default function ServicesPage() {
     description:
       "Explore our full range of bond cleaning services in Sydney – kitchen, bathroom, carpet, oven, window and wall cleaning. 400-point checklist, guaranteed.",
     ogImage: "/assets/generated/service-kitchen-cleaning.dim_800x500.jpg",
+    geoPlacename: "Sydney NSW Australia",
   });
 
   return (

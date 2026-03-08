@@ -140,6 +140,8 @@ export default function HomePage() {
       "End of Lease Cleaning Sydney | Tru Bond Cleaning – 100% Bond Back Guarantee",
     description:
       "Book Sydney's best end of lease cleaning service. Tru End of Lease Cleaning delivers spotless results with a 100% bond back guarantee. Get a free quote today!",
+    ogImage: "/assets/generated/hero-banner.dim_1200x600.jpg",
+    geoPlacename: "Sydney NSW Australia",
   });
 
   const scrollToContact = () => {
@@ -559,6 +561,155 @@ export default function HomePage() {
                 </span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────── SYDNEY SUBURBS ──────────────── */}
+      <section
+        className="py-16 md:py-24 section-gradient"
+        aria-labelledby="suburbs-heading"
+        data-ocid="home.suburbs.section"
+      >
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-4">
+            <span className="inline-block bg-white text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+              Sydney Suburbs We Serve
+            </span>
+            <h2
+              id="suburbs-heading"
+              className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4"
+            >
+              End of Lease Cleaning Across All Sydney Suburbs
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg mb-6">
+              No matter which Sydney suburb you're in, we've got you covered.
+              Click your suburb for local info and pricing.
+            </p>
+            <div className="rounded-2xl overflow-hidden shadow-card max-w-3xl mx-auto mb-10">
+              <img
+                src="/assets/generated/sydney-suburbs-coverage.dim_800x400.jpg"
+                alt="Tru End of Lease Cleaning Sydney suburbs coverage map – bond cleaning across Greater Sydney"
+                className="w-full h-56 object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              {
+                slug: "sydney-cbd",
+                name: "Sydney CBD",
+                image: "/assets/generated/suburb-sydney-cbd.dim_800x500.jpg",
+                tagline: "City apartments & units",
+              },
+              {
+                slug: "parramatta",
+                name: "Parramatta",
+                image: "/assets/generated/suburb-parramatta.dim_800x500.jpg",
+                tagline: "Western Sydney hub",
+              },
+              {
+                slug: "bondi",
+                name: "Bondi",
+                image: "/assets/generated/suburb-bondi.dim_800x500.jpg",
+                tagline: "Beachside apartments",
+              },
+              {
+                slug: "newtown",
+                name: "Newtown",
+                image: "/assets/generated/suburb-newtown.dim_800x500.jpg",
+                tagline: "Inner west terraces",
+              },
+              {
+                slug: "chatswood",
+                name: "Chatswood",
+                image: "/assets/generated/suburb-chatswood.dim_800x500.jpg",
+                tagline: "North shore apartments",
+              },
+              {
+                slug: "liverpool",
+                name: "Liverpool",
+                image: "/assets/generated/suburb-liverpool.dim_800x500.jpg",
+                tagline: "South-west Sydney",
+              },
+              {
+                slug: "penrith",
+                name: "Penrith",
+                image: "/assets/generated/suburb-penrith.dim_800x500.jpg",
+                tagline: "Western Sydney homes",
+              },
+              {
+                slug: "manly",
+                name: "Manly",
+                image: "/assets/generated/suburb-manly.dim_800x500.jpg",
+                tagline: "Northern beaches",
+              },
+              {
+                slug: "hurstville",
+                name: "Hurstville",
+                image: "/assets/generated/suburb-hurstville.dim_800x500.jpg",
+                tagline: "South Sydney units",
+              },
+              {
+                slug: "blacktown",
+                name: "Blacktown",
+                image: "/assets/generated/suburb-blacktown.dim_800x500.jpg",
+                tagline: "Greater western Sydney",
+              },
+              {
+                slug: "cronulla",
+                name: "Cronulla",
+                image: "/assets/generated/suburb-cronulla.dim_800x500.jpg",
+                tagline: "Sutherland Shire",
+              },
+              {
+                slug: "strathfield",
+                name: "Strathfield",
+                image: "/assets/generated/hero-banner.dim_1200x600.jpg",
+                tagline: "Inner west family homes",
+              },
+            ].map((suburb) => (
+              <Link
+                key={suburb.slug}
+                to={`/suburbs/${suburb.slug}` as "/suburbs/sydney-cbd"}
+                className="group block rounded-xl overflow-hidden border border-border shadow-xs hover:shadow-card transition-shadow bg-white"
+              >
+                <div
+                  className="relative overflow-hidden"
+                  style={{ height: "160px" }}
+                >
+                  <img
+                    src={suburb.image}
+                    alt={`End of lease cleaning ${suburb.name} Sydney – Tru End of Lease Cleaning`}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-2 left-2 right-2">
+                    <p className="text-white font-bold text-sm leading-tight">
+                      {suburb.name}
+                    </p>
+                    <p className="text-white/75 text-xs">{suburb.tagline}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Button
+              asChild
+              size="lg"
+              className="font-semibold gap-2"
+              data-ocid="home.suburbs.view_all.button"
+            >
+              <Link to="/suburbs">
+                View All Sydney Suburbs
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

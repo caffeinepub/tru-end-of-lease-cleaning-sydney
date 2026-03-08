@@ -71,6 +71,7 @@ export default function AboutPage() {
     description:
       "Meet the team behind Tru End of Lease Cleaning Sydney. We are local, experienced and committed to helping you get your full bond back.",
     ogImage: "/assets/generated/about-team.dim_800x500.jpg",
+    geoPlacename: "Sydney NSW Australia",
   });
 
   return (
@@ -272,7 +273,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-10">
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-8">
             {suburbs.map((suburb) => (
               <span
                 key={suburb}
@@ -285,6 +286,15 @@ export default function AboutPage() {
             <span className="flex items-center gap-1.5 bg-yellow-400/20 border border-yellow-400/40 rounded-full px-3 py-1.5 text-sm font-medium text-yellow-300">
               + many more suburbs
             </span>
+          </div>
+
+          <div className="max-w-3xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-card">
+            <img
+              src="/assets/generated/sydney-suburbs-coverage.dim_800x400.jpg"
+              alt="Tru End of Lease Cleaning Sydney – bond cleaning service coverage across all Greater Sydney suburbs"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
           </div>
 
           <div className="text-center flex flex-col sm:flex-row gap-4 justify-center">
