@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Deep Navy Primary */
+    --primary: 0.28 0.09 248;
+    --primary-foreground: 0.985 0 0;
+
+    /* Sky Accent */
+    --accent: 0.62 0.14 220;
+    --accent-foreground: 0.985 0 0;
+
+    /* Backgrounds */
+    --background: 0.985 0.005 220;
+    --foreground: 0.18 0.04 248;
+
+    /* Card */
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 248;
+
+    /* Popover */
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 248;
+
+    /* Secondary */
+    --secondary: 0.94 0.02 220;
+    --secondary-foreground: 0.28 0.09 248;
+
+    /* Muted */
+    --muted: 0.94 0.01 220;
+    --muted-foreground: 0.50 0.04 248;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Success */
+    --success: 0.55 0.15 145;
+    --success-foreground: 0.985 0 0;
+
+    /* Border / Input */
+    --border: 0.88 0.02 220;
+    --input: 0.88 0.02 220;
+    --ring: 0.62 0.14 220;
+
+    /* Charts */
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    /* Sidebar */
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.28 0.09 248;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.94 0.02 220;
+    --sidebar-accent-foreground: 0.18 0.04 248;
+    --sidebar-border: 0.88 0.02 220;
+    --sidebar-ring: 0.62 0.14 220;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cabinet Grotesk', 'Outfit', 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.22 0.09 248) 0%,
+      oklch(0.32 0.12 235) 50%,
+      oklch(0.28 0.08 220) 100%
+    );
+  }
+
+  .section-gradient {
+    background: linear-gradient(
+      180deg,
+      oklch(0.985 0.005 220) 0%,
+      oklch(0.94 0.02 220) 100%
+    );
+  }
+
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px oklch(0.28 0.09 248 / 0.15);
+  }
+
+  .whatsapp-green {
+    background-color: #25D366;
+    color: white;
+  }
+
+  .whatsapp-green:hover {
+    background-color: #20b358;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible ring */
+:focus-visible {
+  outline: 2px solid oklch(var(--ring));
+  outline-offset: 2px;
+}
